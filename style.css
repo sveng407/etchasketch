@@ -6,11 +6,12 @@
 
 #container {
 display: grid;
-width: 10em;
-height: 10em;
+width: 20em;
+height: 20em;
 margin: 1em;
 grid-template-columns: repeat(var(--gridNumber), auto);
 grid-template-rows: repeat(var(--gridNumber), auto);
+border: 1px solid black;
 
 
 }
