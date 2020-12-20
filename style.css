@@ -1,0 +1,20 @@
+:root {
+    --gridNumber: 16;
+
+  }
+
+
+#container {
+display: grid;
+width: 10em;
+height: 10em;
+margin: 1em;
+grid-template-columns: repeat(var(--gridNumber), auto);
+grid-template-rows: repeat(var(--gridNumber), auto);
+
+
+}
+
+.sketchme {
+    display: inline-block;
+}

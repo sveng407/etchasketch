@@ -1,1 +1,88 @@
-test
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+<title>etchasketch</title>
+    </head>
+    <body>
+        <button id="changeGridBtn">Change Grid Size</button>
+
+        <div id="container"></div>
+
+
+
+        <script>
+            const container = document.getElementById('container');
+            const pixels = document.getElementById
+
+
+            let pixelNumer = 0;
+            createDivs();
+
+            
+            function createDivs (gridWidth = 16){
+            totalElements = gridWidth * gridWidth;
+            pixelNumer = 0;
+            
+            for (let index = 0; index < totalElements; index++) {
+                const div = document.createElement('div');      
+                div.setAttribute('id', pixelNumer);
+                //div.textContent = " ";
+                container.appendChild(div);
+                pixelNumer++
+            }
+        
+            activateColorChanger();
+        };
+
+
+
+
+            //ask for grid number
+            //set grid number 
+            //change css variable
+            //change number of divs
+
+            const changeGridbtn = document.getElementById('changeGridBtn');
+            changeGridbtn.addEventListener('click', changeGrid);
+
+            function changeGrid(params) {
+                let userGridNumber = prompt("How big? (100 max)");
+
+                if (userGridNumber > 100) {
+                    alert("sad noises");
+                    return;
+                } else {
+                    
+                    document.documentElement.style.setProperty('--gridNumber', userGridNumber);
+                    container.innerHTML = '';
+
+                createDivs(userGridNumber);
+                activateColorChanger();
+
+
+
+                }
+                
+            }
+
+
+
+            function activateColorChanger(){
+            let pixelList = [];
+            for (let index = 0; index < totalElements; index++) {
+                pixelList[index] = document.getElementById(index);
+                pixelList[index].addEventListener("mouseover", changeColor);
+            }
+            
+            };
+
+            function changeColor() {
+                
+                this.style.backgroundColor = 'black';
+            }
+
+
+        </script>
+    </body>
+</html>
